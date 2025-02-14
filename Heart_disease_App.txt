@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required><br><br>
+
+        <label for="trestbps">Resting Blood Pressure:</label>
+        <input type="text" id="trestbps" name="trestbps" required><br><br>
+
+        <label for="chol">Cholesterol:</label>
+        <input type="text" id="chol" name="chol" required><br><br>
+
+        <label for="thalach">Maximum Heart Rate:</label>
+        <input type="text" id="thalach" name="thalach" required><br><br>
+
+        <label for="oldpeak">ST Depression:</label>
+        <input type="text" id="oldpeak" name="oldpeak" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if knn_pred %}
+        <h2>{{ knn_pred }}</h2>
+        <h2>{{ svc_pred }}</h2>
+        <h2>{{ dt_pred }}</h2>
+        <h2>{{ rf_pred }}</h2>
+    {% endif %}
+</body>
+</html>
